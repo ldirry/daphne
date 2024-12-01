@@ -980,6 +980,13 @@ def Daphne_DiagVectorOp : Daphne_Op<"diagVector", [
     let results = (outs MatrixOrU:$res);
 }
 
+def Daphne_NormOp : Daphne_Op<"norm", [
+    TypeFromFirstArg, NumRowsFromArg, OneCol
+]> {
+    let arguments = (ins MatrixOrU:$arg);
+    let results = (outs MatrixOrU:$res);
+}
+
 def Daphne_TriOp : Daphne_Op<"tri", [
     TypeFromFirstArg, ShapeFromArg, DeclareOpInterfaceMethods<InferSparsityOpInterface>
 ]> {

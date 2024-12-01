@@ -864,6 +864,8 @@ antlrcpp::Any DaphneDSLBuiltins::build(mlir::Location loc, const std::string &fu
 
     if (func == "diagVector")
         return createSameTypeUnaryOp<DiagVectorOp>(loc, func, args);
+    if (func == "norm")
+        return createSameTypeUnaryOp<NormOp>(loc, func, args);
     if (func == "lowerTri")
         return createTriOp(loc, func, args, false);
     if (func == "upperTri")
